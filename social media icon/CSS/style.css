@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap");
+
+/*-----css variable------ */
+
+:root {
+  --main-font: "Quicksand", sans-serif;
+  --main-font-size: 1rem;
+  --main-color: #8e44ad;
+  --main-background-light: #e3e2fd;
+  --main-body-background: #fafaff;
+}
+
+/* -----Main-Container----- */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--main-font);
+  font-size: var(--main-font-size);
+}
+
+.main-container,
+.social-container,
+.icon-container {
+  display: flex;
+}
+
+.main-container {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.icon-container {
+  position: relative;
+  padding: 0.5rem;
+  margin: 0 1rem;
+  background-color: var(--main-background-light);
+  border-radius: 1rem;
+  box-shadow: -2px, -2px, 8px #fafaff, 2px, 2px, 8px, rgba(13, 12, 64, 0.2);
+  cursor: pointer;
+}
+
+.social-icon {
+  font-size: 2rem;
+  color: var(--main-color);
+}
+
+.social-icon-tooltip {
+  opacity: 0;
+  position: absolute;
+  padding: 0.5rem 1.4rem;
+  background-color: var(--main-color);
+  color: var(--main-background-light);
+  font-size: var(--main-font-size);
+  border-radius: 0.5rem;
+  pointer-events: none;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.social-icon-tooltip::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: var(--main-color);
+  border-radius: 3px;
+}
+
+.social-icon,
+.icon-container,
+.social-icon-tooltip {
+  transition: 0.3s;
+}
+
+.icon-container:hover {
+  background-color: var(--main-color);
+}
+.icon-container:hover .social-icon {
+  color: var(--main-background-light);
+}
+
+.icon-container:nth-child(1):hover {
+  background-color: #e4405f;
+}
+.icon-container:nth-child(2):hover {
+  background-color: #1da1f2;
+}
+.icon-container:nth-child(3):hover {
+  background-color: #131418;
+}
+.icon-container:nth-child(4):hover {
+  background-color: #1877f2;
+}
+.icon-container:nth-child(5):hover {
+  background-color: #ff5700;
+}
+/* -----styling tooltips----- */
+
+/* -----Tooltip Left----- */
+
+.left-tooltip {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.left-tooltip::after {
+  top: 50%;
+  transform: translate(50%, -50%) rotate(45deg);
+  right: 1px;
+}
+
+.icon-container:hover .left-tooltip {
+  opacity: 1;
+  left: -1rem;
+}
+/* -----Tooltip top     ----- */
+
+.top-tooltip {
+  top: -2.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.top-tooltip::after {
+  left: 50%;
+  transform: translate(-50%, 50%) rotate(45deg);
+  bottom: 1px;
+}
+
+.icon-container:hover .top-tooltip {
+  opacity: 1;
+  top: -3.25rem;
+}
+/* -----Tooltip bottom     ----- */
+.bottom-tooltip {
+  bottom: 0;
+  transform: translate(-50%, 100%);
+  left: 50%;
+}
+
+.bottom-tooltip::after {
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  top: 1px;
+}
+.icon-container:hover .bottom-tooltip {
+  opacity: 1;
+  bottom: -1rem;
+}
+
+/* -----Tooltip Right----- */
+
+.right-tooltip {
+  right: 0;
+  transform: translateX(100%);
+}
+
+.right-tooltip::after {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  left: 1px;
+}
+
+.icon-container:hover .right-tooltip {
+  opacity: 1;
+  right: -1rem;
+}
